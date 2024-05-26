@@ -37,7 +37,7 @@ const renderCountryData = function (dataCountry) {
 // Define a global object to store the fetched data
 let globalDataCountries;
 
-// Function to fetch and store data
+// Function to fetch and store data 
 
 const DataLoadingHtml = ` <tr class="table__row table__row--body">
     <td class="table__data table__data--img">
