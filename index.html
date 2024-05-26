@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries Data</title>
+
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- import Vitnam font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          src="imgs/Logo.svg"
+          alt="image contains World Ranks as a words"
+          class="logo__image"
+        />
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__heading">
+        <!-- result found -->
+        <div class="found-count">
+          Found 0
+          <!--234-->
+          countries
+        </div>
+        <!-- search Box -->
+        <div class="search-box">
+          <div class="search">
+            <img src="imgs/Search.svg" alt="" class="search__icon" />
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Search by Name, Region, Subregion"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="main__content">
+        <!-- filter Box -->
+        <div class="main__filter">
+          <div class="filter">
+            <div class="filter__box filter__sortby">
+              <label for="cars" class="filter__title-box"
+                >Sort by (NOT WOKING COMPLETED CURRENTRLY)</label
+              >
+
+              <div class="select">
+                <select class="filter__select-box">
+                  <option value="name" selected>Name</option>
+                  <option value="population">Population</option>
+                  <option value="area">Area</option>
+                  <option value="region">Region</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter__box filter__region">
+              <label for="" class="filter__title-box"
+                >Region (NOT WOKING CURRENTRLY)</label
+              >
+              <div class="checkbox-rect">
+                <input
+                  type="checkbox"
+                  id="americas-value"
+                  name="horns"
+                  class="checkbox-rect__input"
+                  checked
+                  value="americas"
+                />
+                <label for="americas-value" class="checkbox-rect__label">
+                  <div class="checkbox-rect__fake-one">Americas</div>
+                  <!-- <span class="checkbox-rect__text-value">Independent</span> -->
+                </label>
+              </div>
+              <div class="checkbox-rect">
+                <input
+                  type="checkbox"
+                  id="antarctic-value"
+                  name="horns"
+                  class="checkbox-rect__input"
+                  value="antarctic"
+                />
+                <label for="antarctic-value" class="checkbox-rect__label">
+                  <div class="checkbox-rect__fake-one">Antarctic</div>
+                  <!-- <span class="checkbox-rect__text-value">Independent</span> -->
+                </label>
+              </div>
+              <div class="checkbox-rect">
+                <input
+                  type="checkbox"
+                  id="africa-value"
+                  name="horns"
+                  class="checkbox-rect__input"
+                  value="africa"
+                />
+                <label for="africa-value" class="checkbox-rect__label">
+                  <div class="checkbox-rect__fake-one">Africa</div>
+                  <!-- <span class="checkbox-rect__text-value">Independent</span> -->
+                </label>
+              </div>
+              <div class="checkbox-rect">
+                <input
+                  type="checkbox"
+                  id="asia-value"
+                  name="horns"
+                  class="checkbox-rect__input"
+                  value="asia"
+                  checked
+                />
+                <label for="asia-value" class="checkbox-rect__label">
+                  <div class="checkbox-rect__fake-one">Asia</div>
+                  <!-- <span class="checkbox-rect__text-value">Independent</span> -->
+                </label>
+              </div>
+              <div class="checkbox-rect">
+                <input
+                  type="checkbox"
+                  id="europe-value"
+                  name="horns"
+                  class="checkbox-rect__input"
+                  value="europe"
+                  checked
+                />
+                <label for="europe-value" class="checkbox-rect__label">
+                  <div class="checkbox-rect__fake-one">Europe</div>
+                  <!-- <span class="checkbox-rect__text-value">Independent</span> -->
+                </label>
+              </div>
+              <div class="checkbox-rect">
+                <input
+                  type="checkbox"
+                  id="oceania-value"
+                  name="horns"
+                  class="checkbox-rect__input"
+                  value="oceania"
+                />
+                <label for="oceania-value" class="checkbox-rect__label">
+                  <div class="checkbox-rect__fake-one">Oceania</div>
+                  <!-- <span class="checkbox-rect__text-value">Independent</span> -->
+                </label>
+              </div>
+            </div>
+
+            <div class="filter__box filter__status">
+              <label for="" class="filter__title-box"
+                >Status (NOT WOKING CURRENTRLY)</label
+              >
+
+              <div class="checkbox mb-small">
+                <input
+                  type="checkbox"
+                  id="memberofun-value"
+                  name="horns"
+                  class="checkbox_input"
+                  value="member of united nations"
+                />
+                <label for="memberofun-value" class="checkbox_label">
+                  <div class="checkbox_fake-one"></div>
+                  <span class="checkbox__text-value"
+                    >Member Of United Nations</span
+                  >
+                </label>
+              </div>
+
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  id="independent-value"
+                  name="horns"
+                  class="checkbox_input"
+                  value="independent"
+                />
+                <label for="independent-value" class="checkbox_label">
+                  <div class="checkbox_fake-one"></div>
+                  <span class="checkbox__text-value">Independent</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- result Box -->
+        <div class="main__result">
+          <table class="table">
+            <thead class="table__head">
+              <tr class="table__row table__row--head">
+                <th class="table__data">Flag</th>
+                <th class="table__data">Name</th>
+                <th class="table__data">Population</th>
+                <th class="table__data">Area(km<sup>2</sup>)</th>
+                <th class="table__data">Region</th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <!-- <tr class="table__row table__row--body">
+                <td class="table__data table__data--img">
+                  <div class="flag flag-loading">
+                    <img
+                      class="flag__img"
+                      src="imgs/example data/chinaFlag.png"
+                      alt="china Flag"
+                    />
+                  </div>
+                </td>
+                <td class="table__data table__data--name">China</td>
+                <td class="table__data table__data--popu">1,402,112,000</td>
+                <td class="table__data table__data--area">9,706,961</td>
+                <td class="table__data table__data--region">Asia</td>
+              </tr> -->
+
+              <tr class="table__row table__row--body">
+                <td class="table__data table__data--img">
+                  <div class="flag flag-loading">
+                    <img
+                      class="flag__img"
+                      onclick="console.log('hello')"
+                      src="imgs/example data/moroccoFlag.png"
+                      alt="china Flag"
+                    />
+                  </div>
+                </td>
+                <td class="table__data table__data--name">China</td>
+                <td class="table__data table__data--popu">1,402,112,000</td>
+                <td class="table__data table__data--area">9,706,961</td>
+                <td class="table__data table__data--region">Asia</td>
+              </tr>
+
+              <!-- <tr class="table__row table__row--body">
+                <td class="table__data table__data--img">
+                  <div class="flag flag-loading">
+                    <img
+                      class="flag__img"
+                      src="imgs/example data/algeriaFlag.webp"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td class="table__data table__data--name">China</td>
+                <td class="table__data table__data--popu">1,402,112,000</td>
+                <td class="table__data table__data--area">9,706,961</td>
+                <td class="table__data table__data--region">Asia</td>
+              </tr> -->
+
+              <tr class="table__row table__row--body">
+                <td class="table__data table__data--img">
+                  <div class="flag flag-loading">
+                    <!-- <img
+                      class="flag__img"
+                      src="imgs/example data/algeriaFlag.webp"
+                      alt="" 
+                      /> -->
+                  </div>
+                  <!-- src="imgs/example data/algeriaFlag.webp" -->
+                </td>
+                <td class="table__data table__data--name">
+                  <div class="data data-loading"></div>
+                </td>
+
+                <td class="table__data table__data--popu">
+                  <div class="data data-loading"></div>
+                </td>
+                <td class="table__data table__data--area">
+                  <div class="data data-loading"></div>
+                </td>
+
+                <td class="table__data table__data--region">
+                  <div class="data data-loading"></div>
+                </td>
+              </tr>
+            </tbody>
+            <!-- <tfoot></tfoot> -->
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <div class="hello">hello</div>
+
+    <style>
+      .hello {
+        position: fixed;
+        top: 5rem;
+        right: 5rem;
+        color: black;
+        background-color: white;
+        padding: 1em 1.3em;
+        border-radius: 1rem;
+        font-size: 1.6rem;
+        cursor: pointer;
+      }
+    </style>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
