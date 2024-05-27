@@ -34,12 +34,8 @@ const renderCountryData = function (dataCountry) {
   parent.innerHTML += html;
 };
 
-// Define a global object to store the fetched data
-let globalDataCountries;
-
-// Function to fetch and store data 
-
-const DataLoadingHtml = ` <tr class="table__row table__row--body">
+const DataLoadingDemo = function () {
+  const DataLoadingHtml = ` <tr class="table__row table__row--body">
     <td class="table__data table__data--img">
       <div class="flag flag-loading">
         <!-- <img
@@ -66,43 +62,29 @@ const DataLoadingHtml = ` <tr class="table__row table__row--body">
     </td>
   </tr>`;
 
-const fetchDataAndStoreGlobally = async function (url) {
-  if (globalDataCountries) {
-    // console.log(
-    //   "Data already fetched. Using cached data:",
-    //   globalDataCountries
-    // );
-    // return Promise.resolve(globalDataCountries);
-
-    console.log("gl", globalDataCountries.length);
-    for (let i = 1; i <= globalDataCountries.length; i++) {
-      parent.innerHTML += DataLoadingHtml;
-    }
-    return globalDataCountries;
-  }
-
-  const data = await getDataApi(url);
-  globalDataCountries = data;
-
-  console.log("gl", globalDataCountries.length);
-  // console.log("Data fetched and stored globally:", globalDataCountries);
-
-  for (let i = 1; i <= globalDataCountries.length; i++) {
+  for (let i = 1; i <= 15; i++) {
     parent.innerHTML += DataLoadingHtml;
   }
+};
 
+// DataLoadingDemo();
+
+// Define a global object to store the fetched data
+let globalDataCountries;
+
+// Function to fetch and store data
+
+const fetchDataAndStoreGlobally = async function (url) {
+  if (globalDataCountries) {
+    console.log("gl", globalDataCountries.length);
+    return globalDataCountries;
+  }
+  const data = await getDataApi(url);
+  globalDataCountries = data;
+  console.log("gl", globalDataCountries.length);
   return globalDataCountries;
 };
 
-// for (let i = 1; i <= 5; i++) {
-//   parent.innerHTML += DataLoadingHtml;
-// }
-
-// fetchDataAndStoreGlobally("https://restcountries.com/v3.1/all");
-
-// getDataCountries();
-
-// filter functions
 let filter = {
   searchQuery: "",
   sortBy: "name",
@@ -151,6 +133,7 @@ const onChangeUpdateData = () => {
       filter.independent = false;
       console.log(filter);
     }
+    sortData();
   });
 
   const memberOfUN = document.getElementById("memberofun-value");
@@ -162,6 +145,7 @@ const onChangeUpdateData = () => {
       filter.memberOfUN = false;
       console.log(filter);
     }
+    sortData();
   });
 
   const searchInput = document.querySelector(".search__input");
@@ -179,21 +163,25 @@ const onChangeUpdateData = () => {
   // });
 };
 
+const renderData = function () {
+  // DataLoadingDemo();
+  // sortData();
+};
+
 defaultData();
 onChangeUpdateData();
 
 const sortData = async function (data) {
-  // data = await getDataApi("https://restcountries.com/v3.1/region/antarctic");
+  DataLoadingDemo();
+  // parent.innerHTML = "";
+
   await fetchDataAndStoreGlobally(
-    "https://restcountries.com/v3.1/all?fields=flags,name,population,area,region"
+    // "https://restcountries.com/v3.1/all?fields=flags,name,population,area,region"
+    "https://restcountries.com/v3.1/all"
   );
   data = globalDataCountries;
-  // await getDataApi("https://restcountries.com/v3.1/all");
-  // console.log(`data::(${data.length}`, data);
 
   console.log(data.length);
-
-  parent.innerHTML = "";
 
   let sorted;
 
@@ -225,7 +213,12 @@ const sortData = async function (data) {
 
   let dataSorted = [];
   sorted.filter((a) => {
-    if (filter.region.includes(a.region.toLowerCase())) dataSorted.push(a);
+    if (
+      filter.region.includes(a.region.toLowerCase()) &&
+      filter.memberOfUN == a.unMember &&
+      filter.independent == a.independent
+    )
+      dataSorted.push(a);
   });
 
   // return a.region == "Africa";
@@ -246,6 +239,7 @@ const sortData = async function (data) {
 
   // Object.filter();
 
+  parent.innerHTML = "";
   dataSorted.forEach((el) => renderCountryData(el));
 };
 
