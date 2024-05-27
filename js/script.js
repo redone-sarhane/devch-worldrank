@@ -176,8 +176,7 @@ const sortData = async function (data) {
   // parent.innerHTML = "";
 
   await fetchDataAndStoreGlobally(
-    // "https://restcountries.com/v3.1/all?fields=flags,name,population,area,region"
-    "https://restcountries.com/v3.1/all"
+    "https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,independent,unMember"
   );
   data = globalDataCountries;
 
@@ -240,7 +239,15 @@ const sortData = async function (data) {
   // Object.filter();
 
   parent.innerHTML = "";
-  dataSorted.forEach((el) => renderCountryData(el));
+  let countryCount = 0;
+  dataSorted.forEach((el) => {
+    renderCountryData(el);
+    countryCount++;
+  });
+
+  document.querySelector(
+    ".found-count"
+  ).innerHTML = `Found ${countryCount} countries`;
 };
 
 sortData();

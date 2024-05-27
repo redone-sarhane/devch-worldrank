@@ -118,6 +118,12 @@ select::-ms-expand {
 
   transition: all 0.1s;
 }
+
+@media only screen and (max-width: 830px) {
+  .select {
+    width: 100%;
+  }
+}
 /* Arrow */
 .select::after {
   content: "";
