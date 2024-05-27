@@ -299,6 +299,14 @@ body {
   background-color: var(--clr-black-2);
 }
 
+@media only screen and (max-width: 500px) {
+  .flag {
+    width: 5.2rem;
+    height: 3.2rem;
+    margin-right: 0.5rem;
+  }
+}
+
 .flag::after {
 }
 
