@@ -82,6 +82,12 @@ body {
   align-items: center;
 }
 
+@media only screen and (max-width: 830px) {
+  .found-count {
+    font-size: 1.3rem;
+  }
+}
+
 .search-box {
 }
 
@@ -96,6 +102,12 @@ body {
   width: 35rem;
   /* padding: 2rem ;  */
   border-radius: 1rem;
+}
+
+@media only screen and (max-width: 830px) {
+  .search {
+    max-width: 30rem;
+  }
 }
 
 .search__icon {

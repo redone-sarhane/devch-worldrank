@@ -206,8 +206,8 @@ const sortData = async function (data) {
       sorted = data.sort((a, b) => a.area - b.area);
       break;
 
-    // default:
-    //   break;
+    default:
+      console.log("element selected does not exist");
   }
 
   let dataSorted = [];
@@ -220,23 +220,7 @@ const sortData = async function (data) {
       dataSorted.push(a);
   });
 
-  // return a.region == "Africa";
-  // let dataSorted = [];
-
-  // data.forEach((dt) => {
-  // if (dt.region == "africa") dataSorted.push(dt);
-
-  // console.log(dt.region == "Africa");
-  // });
-
-  // console.log(Array.prototype.filter.call(data, (x) => x.region == "africa"));
-
-  console.log(
-    // `sorted by(${filter.sortBy}), regions:(${filter.region.join(", ")})`,
-    dataSorted
-  );
-
-  // Object.filter();
+  console.log(dataSorted);
 
   parent.innerHTML = "";
   let countryCount = 0;
@@ -247,18 +231,7 @@ const sortData = async function (data) {
 
   document.querySelector(
     ".found-count"
-  ).innerHTML = `Found ${countryCount} countries`; 
+  ).innerHTML = `Found ${countryCount} countries`;
 };
 
 sortData();
-
-// const selectBox = document.querySelector(".filter__select-box");
-// selectBox.addEventListener("change", function () {
-//   filter.sortBy = this.value;
-//   // sortData();
-//   console.log(filter);
-// });
-
-console.log(filter.region.includes("americas".slice(1, -2)));
-
-console.log("americas".slice(1, "americas".length));
