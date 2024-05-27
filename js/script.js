@@ -247,7 +247,7 @@ const sortData = async function (data) {
 
   document.querySelector(
     ".found-count"
-  ).innerHTML = `Found ${countryCount} countries`;
+  ).innerHTML = `Found ${countryCount} countries`; 
 };
 
 sortData();
